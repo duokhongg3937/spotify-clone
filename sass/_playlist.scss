@@ -1,0 +1,105 @@
+.content__container {
+    margin: 0 48px 0 32px;
+}
+@keyframes slideInFromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(calc(100% + 10px));
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes slideOutFromTop {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(calc(15px));
+    }
+}
+.container__heading {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 0 32px 0;
+    z-index: 3;
+}
+
+.playlist {
+    &__container {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 24px;
+    }
+
+    &__item {
+        background-color: white;
+        position: relative;
+        height: 185px;
+        overflow: hidden;
+        border-radius: 8px;
+        font-size: 24px;
+        &:hover .playlist__btn-play-all {
+            display: flex;
+            opacity: 1;
+            animation: slideInFromBottom ease-in-out 0.3s;
+        }
+    }
+
+    &__heading {
+        font-size: inherit;
+        font-weight: 700;
+        padding: 16px;
+        margin: 0;
+        max-width: 100%;
+        letter-spacing: -1.06px;
+        line-height: 31.2px;
+    }
+
+    &__img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        -webkit-transform: rotate(25deg) translate(18%, -2%);
+        transform: rotate(25deg) translate(18%, -2%);
+    }
+
+    &__btn-play-all {
+        width: 54px;
+        height: 54px;
+        background-color: $primary-color;
+        position: absolute;
+        bottom: 16%;
+        left: 8%;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: black;
+        font-size: 2.4rem;
+        opacity: 0;
+        animation: slideOutFromTop ease-in-out 0.1s;
+    }
+}
+
+.top-genres__container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+
+    .playlist__item {
+        height: 220px;
+        font-size: 40px;
+    }
+
+    .playlist__img {
+        width: 128px;
+        height: 128px;
+    }
+}

@@ -1,0 +1,60 @@
+.app__container {
+    position: relative;
+    flex: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden overlay;
+    height: 100%;
+    width: calc(100vw - 240px);
+    scroll-behavior: smooth;
+    &::-webkit-scrollbar {
+        width: 4px;
+    }
+    &::-webkit-scrollbar-track {
+        border-radius: 10px;
+        background: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background: $text-gray-light;
+        &:hover {
+            background: $text-gray-light;
+        }
+    }
+}
+
+.app__header {
+    width: 100%;
+    padding-top: 85px;
+    position: relative;
+}
+
+.app__player {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: $player-height;
+    background-color: #181818;
+    &.playing {
+        .icon-play {
+            display: none;
+        }
+        .icon-pause {
+            display: block;
+        }
+        .player__container-song {
+            transform: translateX(30px);
+        }
+    }
+}
+
+.app__sidebar {
+    width: 240px;
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    background-color: $black-darkest;
+}

@@ -1,0 +1,38 @@
+
+.sidebar {
+    &__logo {
+        &-img {
+            height: 39px;
+            margin: 24px 0 25px 24px;
+        }
+    }
+    &__nav {
+        margin-left: 24px;
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: $text-gray-light;
+        &-list {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        &-item {
+            i {
+                margin-right: 16px;
+                font-size: 2rem;
+            }
+        }
+        &-item:hover {
+            color: $text-white;
+        }
+    }
+    &__item-link {
+        display: flex;
+        align-items: center;
+        padding: 10px 0;
+        gap: 0 5px;
+        div {
+            width: 32px;
+        }
+    }
+}
