@@ -738,8 +738,8 @@ ul {
   justify-content: flex-start;
 }
 .playlist__song-thumb {
-  width: 42px;
-  height: 42px;
+  width: 43px;
+  height: 43px;
   border-radius: 4px;
   position: relative;
   margin-right: 16px;
