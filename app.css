@@ -9,7 +9,7 @@ html {
   word-wrap: break-word;
   box-sizing: border-box;
   scroll-behavior: smooth;
-  font-family: "Poppins", sans-serif;
+  font-family: "Montserrat", sans-serif;
   scroll-behavior: smooth;
 }
 
@@ -294,12 +294,39 @@ ul {
   }
 }
 .container__heading {
+  position: relative;
   font-size: 24px;
   font-weight: 700;
   margin: 0 0 32px 0;
   z-index: 3;
 }
 
+.playlist__section {
+  max-height: 700px;
+  height: 420px;
+  overflow: hidden overlay;
+  scroll-behavior: smooth;
+}
+.playlist__section::-webkit-scrollbar {
+  width: 4px;
+  height: 36px;
+  display: none;
+}
+.playlist__section:hover::-webkit-scrollbar {
+  display: block;
+}
+.playlist__section::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background: transparent;
+}
+.playlist__section::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #B3B3B3;
+  height: 50px;
+}
+.playlist__section::-webkit-scrollbar-thumb:hover {
+  background: #B3B3B3;
+}
 .playlist__container {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -418,6 +445,7 @@ ul {
   height: 19px;
   max-width: 190px;
   line-height: 2rem;
+  font-weight: 700;
 }
 .player__song-author {
   font-size: 1.1rem;
@@ -624,7 +652,7 @@ ul {
   top: 0;
   left: 0;
   right: 0;
-  height: 180px;
+  height: 500px;
   filter: blur(50px);
 }
 .app__header-overlay {
@@ -634,7 +662,7 @@ ul {
   right: 0;
   opacity: 0.6;
   width: 100%;
-  height: 290px;
+  height: 1000px;
   background-color: #170f23;
 }
 .app__header-container {
@@ -667,7 +695,7 @@ ul {
   border-radius: 50%;
 }
 .app__user-name {
-  font-size: 3.2rem;
+  font-size: 3.8rem;
   font-weight: 700;
   line-height: 3.8rem;
   margin: 15px 0 5px;
@@ -789,7 +817,7 @@ ul {
   font-size: 1.6rem;
   line-height: 2rem;
   margin: 0;
-  font-weight: 500;
+  font-weight: 700;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;

@@ -1,4 +1,3 @@
-'use strict'
 
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
@@ -443,7 +442,6 @@ const app = {
                 audio.play();
             }
             $('.app__container').scrollTop = 0;
-            $('.app__container').documentElement.scrollTop = 0;
         }
     },
 
