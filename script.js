@@ -31,7 +31,7 @@ const playerSongTitle = $('.player__song-title');
 const titleItems = Array.from($$('.title-item'));
 const titleItem = $('.title-item');
 const authorItem = $('.author-item');
-
+const headerBg = $('.app__header-bg');
 
 
 const app = {
@@ -159,7 +159,30 @@ const app = {
             path: './assets/songs/song5.mp3',
             image: './assets/image/pic5.jfif'
         },
-
+        {
+            name: 'Có em',
+            singer: 'Madihu, Low G',
+            path: './assets/songs/song6.mp3',
+            image: './assets/image/pic6.jfif'
+        },
+        {
+            name: 'bao tiền một mớ bình yên?',
+            singer: '14 Casper, Bon Nghiêm',
+            path: './assets/songs/song7.mp3',
+            image: './assets/image/pic7.jfif'
+        },
+        {
+            name: 'từ thích thích thành thương thương',
+            singer: 'AMEE, Hoàng Dũng',
+            path: './assets/songs/song8.mp3',
+            image: './assets/image/pic8.jfif'
+        },
+        {
+            name: 'hai mươi hai (22)',
+            singer: 'Hứa Kim Tuyền, AMEE',
+            path: './assets/songs/song9.mp3',
+            image: './assets/image/pic9.jfif'
+        },
         ],
         [{
             name: 'Ái nộ',
@@ -322,6 +345,7 @@ const app = {
                 }
             }
         }
+
         function currentTime() {
             if (_this.isSeeking) {
                 let seekTime;
@@ -438,6 +462,7 @@ const app = {
         });
         authorItem.innerText = this.currentSong.singer;
         cdThumb.style.backgroundImage = `url('${this.currentSong.image}')`;
+        headerBg.style.backgroundImage = `url('${this.currentSong.image}')`;
         this.setPlayerInfoWidth();
         audio.src = this.currentSong.path;
     },

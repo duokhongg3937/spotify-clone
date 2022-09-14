@@ -705,6 +705,7 @@ ul {
   width: 100%;
   padding: 2px 16px 2px 0;
   border-radius: 4px;
+  transition: ease 0.3s;
 }
 .playlist__list-song:hover, .playlist__list-song.active {
   background-color: rgba(255, 255, 255, 0.1019607843);
@@ -738,8 +739,8 @@ ul {
   justify-content: flex-start;
 }
 .playlist__song-thumb {
-  width: 43px;
-  height: 43px;
+  width: 42px;
+  height: 42px;
   border-radius: 4px;
   position: relative;
   margin-right: 16px;
