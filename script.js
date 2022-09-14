@@ -73,7 +73,7 @@ const app = {
         },
         {
             heading: 'New Releases',
-            path: 'https://scontent.fsgn5-12.fna.fbcdn.net/v/t1.15752-9/284832785_720061832661503_7954530661576818685_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=ae9488&_nc_ohc=PcQmRjyUq1wAX8xBK8M&_nc_ht=scontent.fsgn5-12.fna&oh=03_AVKb8iGNlKK6O3N436mVzLGnokjWGsZPRXYl2nFFx3J2JA&oe=6330FAA6',
+            path: './assets/image/pic4.png',
             bgColor: '#E8115B'
         },
         {
