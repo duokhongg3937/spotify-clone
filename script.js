@@ -73,7 +73,7 @@ const app = {
         },
         {
             heading: 'New Releases',
-            path: './assets/image/pic4.png',
+            path: './assets/image/pic4.jpg',
             bgColor: '#E8115B'
         },
         {
