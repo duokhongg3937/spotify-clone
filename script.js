@@ -73,7 +73,7 @@ const app = {
         },
         {
             heading: 'New Releases',
-            path: 'https://scontent.fsgn5-12.fna.fbcdn.net/v/t1.15752-9/284832785_720061832661503_7954530661576818685_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=ae9488&_nc_ohc=PcQmRjyUq1wAX8xBK8M&_nc_ht=scontent.fsgn5-12.fna&oh=03_AVKb8iGNlKK6O3N436mVzLGnokjWGsZPRXYl2nFFx3J2JA&oe=6330FAA6',
+            path: './assets/image/pic4.jpg',
             bgColor: '#E8115B'
         },
         {
@@ -213,7 +213,7 @@ const app = {
         // render danh sách bài hát 
         const songsHtmls = this.songs[this.currentPlaylistIndex].map((song, index) => {
             return `
-        <div class="playlist__list-song ${index === this.currentIndex ? 'active' : ''}" data-index="${index}">
+        <div class="playlist__list-song index-${index} ${index === this.currentIndex ? 'active' : ''}" data-index="${index}">
             <span class="playlist__song-index">${index + 1}</span>
             <div class="playlist__song-info">
                 <div class="playlist__song-thumb" style="background: url('${song.image}') no-repeat center center / cover">
@@ -247,6 +247,12 @@ const app = {
         `
         });
         songList.innerHTML = songsHtmls.join('');
+    },
+    alternateActiveSong: function () {
+        const activeSong = $('.playlist__list-song.active');
+        const alternateSong = $(`.playlist__list-song.index-${this.currentIndex}`);
+        activeSong.classList.remove('active');
+        alternateSong.classList.add('active');
     },
     render: function () {
         // render top genres ra giao diện từ array topGenres
@@ -344,7 +350,8 @@ const app = {
                 }
             }
         }
-
+        
+        // xử lí khi tua bài hát
         function currentTime() {
             if (_this.isSeeking) {
                 let seekTime;
@@ -357,7 +364,6 @@ const app = {
         }
         progress.onmousemove = currentTime;
         progress.addEventListener('touchmove', currentTime);
-
         function seekStart() {
             if (audio.duration) {
                 _this.isSeeking = true;
@@ -366,11 +372,9 @@ const app = {
         function seekEnd() {
             _this.isSeeking = false;
         }
-
         progress.addEventListener('touchstart', seekStart);
         progress.onmousedown = seekStart;
         progress.onmouseup = seekEnd;
-
         progress.ontouchstart = seekStart;
         progress.ontouchend = seekEnd;
 
@@ -382,7 +386,7 @@ const app = {
             } else {
                 _this.nextSong();
             }
-            _this.renderSong();
+            _this.alternateActiveSong();
             audio.play();
         }
 
@@ -393,7 +397,7 @@ const app = {
             } else {
                 _this.prevSong();
             }
-            _this.renderSong();
+            _this.alternateActiveSong();
             audio.play();
         }
 
@@ -426,7 +430,7 @@ const app = {
             if (songNode && !micNode && !heartNode && !optionsNode) {
                 _this.currentIndex = Number(songNode.dataset.index);
                 _this.loadCurrentSong();
-                _this.renderSong();
+                _this.alternateActiveSong();
                 audio.play();
             }
         }
