@@ -1,0 +1,25 @@
+@media only screen and (max-width: 600px) {
+    .app__sidebar, .playlist__song-option, .playlist__song-time {
+        display: none;
+    }
+    .content__container {
+        margin: 0 16px;
+    }
+    .playlist__song-info {
+        flex: 1;
+    }
+    .top-genres__container {
+        grid-template-columns: 1fr;
+    }
+    .playlist__container {
+        grid-template-columns: 1fr 1fr;
+        .playlist__item:hover {
+            .playlist__btn-play-all {
+                display: none;
+            }
+        }
+        .playlist__btn-play-all {
+            display: none;
+        }
+    }
+}
