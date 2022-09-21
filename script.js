@@ -12,7 +12,7 @@ const topGenresSection = $('.top-genres-section');
 
 const audio = $('#audio');
 const player = $('.app__player');
-const cdThumb = $('.player__song-thumb');
+const cdThumb = $('.thumb-img');
 const trackTime = $('.tracktime');
 const durationTime = $('.duration-time');
 const progress = $('.progress');
@@ -258,15 +258,13 @@ const app = {
         // render top genres ra giao diện từ array topGenres
         const topGenresHtmls = this.topGenres.map((topGenre, index) => {
             return `
-                <a href="#">
-                    <div class="playlist__item" style="background-color: ${topGenre.bgColor};" data-index="${index}">
-                        <h3 class="playlist__heading">${topGenre.heading}</h3>
-                        <img src="${topGenre.path}" alt="" class="playlist__img">
-                        <div class="playlist__btn-play-all">
-                            <i class="fa-solid fa-play"></i>
-                        </div>
+                <div class="playlist__item" style="background-color: ${topGenre.bgColor};" data-index="${index}">
+                    <h3 class="playlist__heading">${topGenre.heading}</h3>
+                    <img src="${topGenre.path}" alt="" class="playlist__img">
+                    <div class="playlist__btn-play-all">
+                        <i class="fa-solid fa-play"></i>
                     </div>
-                </a>
+                </div>
             `
         });
         topGenresContainer.innerHTML = topGenresHtmls.join('');
@@ -274,15 +272,13 @@ const app = {
         // render các album bài hát ra giao diện từ array playlists
         const playlistHtmls = this.playlists.map(playlist => {
             return `
-                <a href="#" style="display: inline-grid;">
-                    <div class="playlist__item" style="background-color: ${playlist.bgColor};">
-                        <h3 class="playlist__heading">${playlist.heading}</h3>
-                        <img src="${playlist.path}" alt="" class="playlist__img">
-                        <div class="playlist__btn-play-all">
-                            <i class="fa-solid fa-play"></i>
-                        </div>
+                <div class="playlist__item" style="background-color: ${playlist.bgColor};">
+                    <h3 class="playlist__heading">${playlist.heading}</h3>
+                    <img src="${playlist.path}" alt="" class="playlist__img">
+                    <div class="playlist__btn-play-all">
+                        <i class="fa-solid fa-play"></i>
                     </div>
-                </a>
+                </div>
             `
         });
         playlistContainer.innerHTML = playlistHtmls.join('');
@@ -350,7 +346,7 @@ const app = {
                 }
             }
         }
-        
+
         // xử lí khi tua bài hát
         function currentTime() {
             if (_this.isSeeking) {

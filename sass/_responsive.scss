@@ -1,53 +1,68 @@
 @media only screen and (max-width: 600px) {
-    .app__sidebar, .playlist__song-option, .playlist__song-time {
-        display: none;
-    }
-    .content__container {
-        margin: 0 16px;
-    }
-    .playlist__song-info {
-        flex: 1;
-    }
     .top-genres__container {
         grid-template-columns: 1fr;
     }
-    .playlist__container {
-        grid-template-columns: 1fr 1fr;
-    }
-    .playlist__item:hover {
-        .playlist__btn-play-all {
-            display: none;
+    .playlist {
+        &__container {
+            grid-template-columns: 1fr 1fr;
         }
-    }
-    .header__btn {
-        display: none;
+        &__item:hover {
+            &__btn-play-all {
+                display: none;
+            }
+        }
+        &__song {
+            &-info {
+                flex: 1;
+            }
+            &-option, &-time {
+                display: none;
+            }
+        }
     }
     .header {
         width: 100%;
         justify-content: space-around;
+        &__btn {
+            display: none;
+        }
         &__nav-item:nth-child(2) {
             display: none;
         }
     }
-    .app__user {
-        &-name {
-            margin-top: 0;
+    .app {
+        &__user {
+            &-name {
+                margin-top: 0;
+            }
+            &-img {
+                width: 120px;
+                height: 120px;
+            }
         }
-        &-img {
-            width: 120px;
-            height: 120px;
+        &__sidebar {
+            display: none;
+        }
+        &__player.playing .player__container-song {
+            transform: none;
         }
     }
     .content {
         padding-top: 250px;
+        &__container {
+            margin: 0 16px;
+        }
     }
     .player {
         &__container {
+            padding: 0 16px;
             &-song {
                 width: 60%;
             }   
         }
         &__control {
+            background-color: $player-bg-color;
+            z-index: 10;
             .progress-block, .btn-random, .btn-repeat {
                 display: none;
             }
@@ -55,8 +70,14 @@
         &__options {
             display: none;
         }
-    }
-    .app__player.playing .player__container-song {
-        transform: none;
+        &__song {
+            &-thumb {
+                width: 54px;
+                height: 54px;
+            }
+            &-title {
+                max-width: 9999px;
+            }
+        }
     }
 }
