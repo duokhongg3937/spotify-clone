@@ -1,4 +1,6 @@
 package-lock.json
 package.json
+nodemon.json
 app.js
-node_modules/
+node_modules
+src/

@@ -209,6 +209,7 @@ const app = {
         }],
         []
     ],
+
     renderSong: function () {
         // render danh sách bài hát 
         const songsHtmls = this.songs[this.currentPlaylistIndex].map((song, index) => {
@@ -368,7 +369,7 @@ const app = {
         function seekEnd() {
             _this.isSeeking = false;
         }
-        progress.addEventListener('touchstart', seekStart);
+        progress.addEventListener('click', seekStart);
         progress.onmousedown = seekStart;
         progress.onmouseup = seekEnd;
         progress.ontouchstart = seekStart;
