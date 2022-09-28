@@ -369,7 +369,7 @@ const app = {
         function seekEnd() {
             _this.isSeeking = false;
         }
-        progress.addEventListener('click', seekStart);
+        progress.addEventListener('mousemove', seekStart);
         progress.onmousedown = seekStart;
         progress.onmouseup = seekEnd;
         progress.ontouchstart = seekStart;
