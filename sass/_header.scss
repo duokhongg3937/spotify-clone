@@ -75,6 +75,7 @@
         }
         &-item {
             cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
         }
         &-btn {
             width: 36px;

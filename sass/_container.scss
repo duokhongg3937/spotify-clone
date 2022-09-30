@@ -37,6 +37,7 @@
     right: 0;
     height: $player-height;
     background-color: #181818;
+    z-index: 99;
     &.playing {
         .icon-play {
             display: none;
